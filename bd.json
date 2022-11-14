@@ -1,0 +1,49 @@
+{
+  "usuario": [
+    {
+      "nome": "Luciana Medeiros Silva",
+      "email": "luciana.2001@gmail.com",
+      "cpf": 91447204328,
+      "telefone": 85986322814,
+      "endereco": "Rua das Flores, 828, bairro Santa Maria",
+      "senha": "Lucian@22",
+      "id": 1
+    },
+    {
+      "nome": "Maria de Lurdes Pereira",
+      "email": "lurdes.13@gmail.com",
+      "cpf": 98855176005,
+      "telefone": 85996979554,
+      "endereco": "Rua Canavial, 282, bairro Manoela Tavares",
+      "senha": "lurdinha10",
+      "id": 2
+    },
+    {
+      "nome": "Maria de Lurdes Pereira",
+      "email": "lurdes.13@gmail.com",
+      "cpf": 98855176005,
+      "telefone": 85996979554,
+      "endereco": "Rua das Catracas, 404, bairro Bezerra Menezes",
+      "senha": "qwe@3210",
+      "id": 3
+    },
+    {
+      "nome": "Luzia Vitória Lima de Sousa",
+      "email": "luzia.008lima@gmail.com",
+      "cpf": "08737701371",
+      "telefone": "8981015215",
+      "endereco": "Euclides barroso, 1029, bairro Santa Luzia",
+      "senha": "Belinha10",
+      "id": 6
+    },
+    {
+      "nome": "Mario Sergio Cortela",
+      "email": "marinhho@gmail.com",
+      "cpf": "62312612631",
+      "telefone": "85997463512",
+      "endereco": "Rua Paulo Gustavo, 968, bairro Niteroi",
+      "senha": "qwepop@10",
+      "id": 7
+    }
+  ]
+}

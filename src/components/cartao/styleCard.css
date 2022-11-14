@@ -1,0 +1,64 @@
+.card_supre{
+    background-color:#5e68b1 ;
+    height: 100vh;
+    display: flex;
+}
+.card{
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5rem;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.661);
+}
+.card_esc{
+    background-image: linear-gradient(to left bottom, #f275ff, #d05be8, #af41d2, #8d25bc, #6b00a6);
+}
+.flag{
+    display: flex;
+    align-items: center;
+}
+.flag.flag_image{
+    background-size: contain;
+    width: 100px;
+    height: 60px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    padding: 4px;
+}
+input.text {
+    background: transparent;
+    border: 1px solid #eee;
+    font-size: 1.8rem;
+}
+.text{
+    font-size: 1.9rem;
+    color: #ffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text small{
+    font-size: 1.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+}
+.card-infor{
+    display: flex;
+    justify-content: space-between;
+}
+.card-cod{
+    display: flex;
+    justify-content: space-between;
+}
+.title{
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-expiration-cvc {
+    display: grid;
+    grid-template-columns: 2fr 1;
+}
