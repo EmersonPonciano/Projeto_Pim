@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color:#5e68b1 ; 
+    background-color:#6776cf ; 
     margin: 0;
     box-shadow: 0 0 11px rgba(0, 0, 0, 0.661);
 }
@@ -60,7 +60,7 @@ input{
     outline: none;
 }
 input:active{
-    border: 1px solid #5e68b1;
+    border: 1px solid #6776cf;
 }
 label{
     text-align: left;
