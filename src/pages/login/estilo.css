@@ -9,13 +9,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color:#6776cf ; 
+    background-color:#000000 ; 
     margin: 0;
     box-shadow: 0 0 11px rgba(0, 0, 0, 0.661);
 }
 .form-content{
     width: 300px;
     height: 300px;
+    margin-top: 2%;
 }
 form{
     background-color: #f9f9f9;
@@ -60,7 +61,7 @@ input{
     outline: none;
 }
 input:active{
-    border: 1px solid #6776cf;
+    border: 1px solid #000000;
 }
 label{
     text-align: left;
@@ -98,6 +99,9 @@ button:hover{
     margin-top: 5%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 80%;
+}
+body{
+    background-color: #000000;
 }
 
 
