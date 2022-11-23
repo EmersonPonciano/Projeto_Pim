@@ -5,6 +5,7 @@ import React from "react";
 import './estilo.css'
 import verificaCPF from "../../utils/verificaCpf";
 import api from "../../services/usuarioSevice";
+import { IMaskInput} from "react-imask"
 
 export function Login (){
     const[cpf, setCpf]= useState("")
@@ -58,7 +59,9 @@ export function Login (){
                     <h1>Faça seu login</h1>
 
                     <label >CPF</label>
-                    <input required onChange={(e)=>setCpf(e.target.value)} value={cpf} type="text" maxLength='11' placeholder=" "/>
+                    <IMaskInput 
+                    mask = "000.000.000-00"
+                    required onChange={(e)=>setCpf(e.target.value)} value={cpf} type="text" maxLength='14' placeholder=" "/>
                     <br></br>
 
                     <label >Senha</label>

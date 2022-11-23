@@ -4,6 +4,7 @@ import './estiloUsuario.css'
 import { useNavigate } from "react-router-dom";
 import verificaCPF from "../../utils/verificaCpf";
 import api from "../../services/usuarioSevice";
+import { IMaskInput} from "react-imask"
 
 export function CadastrarUsuario (){
     const[nome, setNome]= useState("")
@@ -95,7 +96,9 @@ export function CadastrarUsuario (){
 
                         <label>CPF:</label>
                         <br/>
-                        <input type="text" value={cpf} required onChange={(e)=> {handleCpfChange(e)}} maxLength='11'/>
+                        <IMaskInput 
+                        mask = "000.000.000-00"
+                        required onChange={(e)=>setCpf(e.target.value)} value={cpf} type="text" maxLength='14' placeholder=" "/>
                         <br/>
 
                         <label>Telefone:</label>
@@ -108,7 +111,7 @@ export function CadastrarUsuario (){
                         <input type="password" value={senha} required onChange={(e)=> {handleSenhaChange(e)}} minlength="8"/>
                         <br/>
 
-                        <label>Confirma Senha:</label>
+                        <label>Confirmar Senha:</label>
                         <br/>
                         <input type="password" value={confSenha} required onChange={(e)=> {handleConfSenhaChange(e)}} minlength="8"/>
                         <br/>
