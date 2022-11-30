@@ -6,11 +6,12 @@ import verificaCPF from "../../utils/verificaCpf";
 import api from "../../services/usuarioSevice";
 import { IMaskInput} from "react-imask"
 import { initializeApp } from "firebase/app";
+import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 
 const projetoPim = initializeApp( {
-    apiKey: "AIzaSyBV75g6arnVJEAVwSyTVB4_59sUI5XXbvE",
-    authDomain: "projetopim-31155.firebaseapp.com",
-    projectId: "projetopim-31155",
+    apiKey: "AIzaSyCwRJNwsRz1uaq8sbcB7vBJ8xb0dRPGWVU",
+    authDomain: "projetopim-1e4de.firebaseapp.com",
+    projectId: "projetopim-1e4de",
   });
 
 export function CadastrarUsuario (){
@@ -22,25 +23,27 @@ export function CadastrarUsuario (){
     const[confSenha, setconfSenha]= useState("");
     const [users, setUsers] = useState([]);
 
-    const db = getFireStore(projetoPim);
+    const db = getFirestore(projetoPim);
+    const userCollectionRef = collection(db, "users")
 
     useEffect(() => {
-        
+        const getUsers = async () => {
+            const data = await getDocs(userCollectionRef)
+            
+        }
+        getUsers();
       }, []);
     
-    function createUser(){
-        api
-          .post("",{
-            nome: nome ,
-            email: email ,
-            cpf: cpf ,
-            telefone: telefone ,
-            senha: senha
-     })
-          .then((response) => console.log(response.data))
-          .catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
-          });
+    async function createUser(){
+        const user = await addDoc(userCollectionRef,{
+            nome,
+            email,
+            cpf,
+            telefone,
+            senha,
+            confSenha,
+        });
+        console.log(user);
     }
     
 
