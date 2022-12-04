@@ -6,46 +6,26 @@ import './estilo.css'
 import verificaCPF from "../../utils/verificaCpf";
 import api from "../../services/usuarioSevice";
 import { IMaskInput} from "react-imask"
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../services/firebaseConfig';
 
 export function Login (){
-    const[cpf, setCpf]= useState("")
-    const[senha, setSenha]= useState("")
+    const[email, setEmail]= useState("");
+    const[senha, setSenha]= useState("");
 
     const navigate = useNavigate();
 
-    function authenticateUser() {
-        api
-        .get("", {params: {
-          cpf: cpf ,
-          senha: senha
-   }})
-        .then((response) => {
-            console.log(response.data)
-            if(response.data.length == 0)
-                alert("Erro")
-            else {
-                alert("Usuario logado!")
-                navigate("");
-            }
+    const authenticateUser = async() => {
+        try{
+            const  user = await signInWithEmailAndPassword(auth, email, senha);
+        } catch (error){
+            console.log(error.message);
         }
-        )
-        .catch((err) => {
-          console.error("ops! ocorreu um erro" + err);
-        });
     }
 
     function handleLogin(e){
-        e.preventDefault()
-
-        if(cpf.length > 0 && senha.length > 0){
-            if(!verificaCPF(cpf))                
-                alert("CPF inválido!") 
-        }else{
-            alert("Preencha todos os campos!")
-        }
-
+        e.preventDefault();
         authenticateUser();
-
     }
 
     return (
@@ -58,10 +38,8 @@ export function Login (){
 
                     <h1>Faça seu login</h1>
 
-                    <label >CPF</label>
-                    <IMaskInput 
-                    mask = "000.000.000-00"
-                    required onChange={(e)=>setCpf(e.target.value)} value={cpf} type="text" maxLength='14' placeholder=" "/>
+                    <label >Email</label>
+                    <input required onChange={(e)=>setEmail(e.target.value)} value={email} type="text" placeholder=" "/>
                     <br></br>
 
                     <label >Senha</label>
